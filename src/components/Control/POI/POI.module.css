@@ -1,0 +1,24 @@
+.poi form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.poi form .title {
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.poi .height {
+  margin-bottom: 1.5rem;
+}
+
+.poi .level {
+  margin-bottom: 1rem;
+}
+
+.poi .btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

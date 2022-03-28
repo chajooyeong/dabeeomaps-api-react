@@ -1,0 +1,17 @@
+.marker form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.marker form .title {
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.marker .btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

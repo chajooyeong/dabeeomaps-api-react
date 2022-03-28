@@ -1,0 +1,9 @@
+.control {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 10rem;
+  padding: 1.5rem 2rem;
+  background-color: #242526;
+  border-radius: 0.5rem;
+}

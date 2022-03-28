@@ -1,0 +1,14 @@
+.camera button {
+  margin-bottom: 1.5rem;
+}
+
+.camera form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.camera form .title {
+  color: #ffffff;
+  opacity: 0.6;
+}

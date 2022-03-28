@@ -1,0 +1,31 @@
+.menu {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 8rem;
+  padding: 1.5rem 2rem;
+  background-color: #242526;
+  border-radius: 0.5rem;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+
+.menu ul li a {
+  font-size: 1rem;
+  opacity: 0.6;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu ul li a:hover {
+  opacity: 1;
+}
+
+.menu ul .active {
+  opacity: 1;
+}
