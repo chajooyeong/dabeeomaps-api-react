@@ -6,7 +6,7 @@ import styles from "./Marker.module.css";
 function Marker(props) {
   const mapDraw = props.mapDraw;
 
-  let markers = [];
+  let marker = [];
   let curPos = {
     x: 0,
     y: 0,
@@ -20,13 +20,13 @@ function Marker(props) {
     switch (e.target.value) {
       case "setMarker":
         const markerPos = Object.assign({}, curPos);
-        markers.push({ position: markerPos });
-        mapDraw.setMarker({ marker: markers });
+        marker[0] = { position: markerPos };
+        mapDraw.setMarker({ marker: marker });
         break;
 
       case "clearMarker":
+        marker = [];
         mapDraw.clearMarker();
-        markers = [];
         break;
 
       default:

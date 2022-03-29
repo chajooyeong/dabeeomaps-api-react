@@ -23,6 +23,8 @@ export function drawMap(mapCallback, otherOptions) {
   const authorization = new window.indoorMapApi.Authorization({
     clientId: "28AXw_veA2YbNKDP6poTpT",
     clientSecret: "70c540c169af62808f4da3709e988e06",
+    // clientId: "fgR4b4WQAEVb6ZPmc7XEME",
+    // clientSecret: "ac43a1278470ab3825883898c5f51a0f",
   });
 
   // 지도 생성 옵션
@@ -60,12 +62,12 @@ export function onMapLoad(response, dispatch) {
     const mapContainer = document.getElementById("map");
     mapContainer.addEventListener("object-click", (e) => {
       if (e.detail) {
-        window.alert(createAlert(e.detail, "Object"));
+        // window.alert(createAlert(e.detail, "Object"));
       }
     });
     mapContainer.addEventListener("poi-click", (e) => {
       if (e.detail) {
-        window.alert(createAlert(e.detail, "POI"));
+        // window.alert(createAlert(e.detail, "POI"));
       }
     });
   }

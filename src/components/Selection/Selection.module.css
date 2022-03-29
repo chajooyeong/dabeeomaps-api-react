@@ -10,6 +10,7 @@
   padding: 1rem 2rem;
   background-color: #242526;
   border-radius: 0.5rem;
+  z-index: 999;
 }
 
 .selection div {
