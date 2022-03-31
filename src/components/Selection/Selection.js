@@ -5,6 +5,35 @@ import styles from "./Selection.module.css";
 function Selection() {
   const mapDraw = useSelector((state) => state.mapDraw);
 
+  console.log(mapDraw.response);
+
+  const floorInfos = mapDraw.response.floorInfo;
+  const floorOpts = floorInfos.map((info, i) => {
+    return (
+      <option value={info.id} key={i}>
+        {info.name[0].text}
+      </option>
+    );
+  });
+
+  const themeInfos = mapDraw.response.themeInfo;
+  const themeOpts = themeInfos.map((info, i) => {
+    return (
+      <option value={info.id} key={i}>
+        {info.name}
+      </option>
+    );
+  });
+
+  const langInfos = mapDraw.response.langInfo;
+  const langOpts = langInfos.map((info, i) => {
+    return (
+      <option value={info.lang} key={i}>
+        {info.name}
+      </option>
+    );
+  });
+
   const setMap = (e) => {
     switch (e.target.name) {
       case "camera":
@@ -12,7 +41,7 @@ function Selection() {
         break;
 
       case "floor":
-        mapDraw.redrawMap({ floor: e.target.value });
+        mapDraw.changeFloor({ floor: e.target.value });
         break;
 
       case "theme":
@@ -54,10 +83,7 @@ function Selection() {
     >
       <div>
         <label htmlFor="floor">Choose floor</label>
-        <select name="floor">
-          <option value="FL-skycuh0406y87004">11F</option>
-          <option value="FL-ubj3xpjjwp4p7136">2F</option>
-        </select>
+        <select name="floor">{floorOpts}</select>
       </div>
 
       <div>
@@ -70,19 +96,12 @@ function Selection() {
 
       <div>
         <label htmlFor="theme">Choose theme</label>
-        <select name="theme">
-          <option value="1453">모던 블루 테마</option>
-          <option value="1449">다비오 테마</option>
-          <option value="1451">블랙 테마</option>
-        </select>
+        <select name="theme">{themeOpts}</select>
       </div>
 
       <div>
         <label htmlFor="language">Choose language</label>
-        <select name="language">
-          <option value="ko">한국어</option>
-          <option value="en">English</option>
-        </select>
+        <select name="language">{langOpts}</select>
       </div>
 
       <div>

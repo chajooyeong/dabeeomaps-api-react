@@ -21,10 +21,12 @@ export function drawMap(mapCallback, otherOptions) {
   // 리액트에서 indoorMapApi 접근할 때, 모듈 설치가 아니라면
   // new window.indoorMapApi 이런 식으로 window 전역객체를 통해서 접근해야 함.
   const authorization = new window.indoorMapApi.Authorization({
-    clientId: "28AXw_veA2YbNKDP6poTpT",
-    clientSecret: "70c540c169af62808f4da3709e988e06",
+    // clientId: "28AXw_veA2YbNKDP6poTpT",
+    // clientSecret: "70c540c169af62808f4da3709e988e06",
     // clientId: "fgR4b4WQAEVb6ZPmc7XEME",
     // clientSecret: "ac43a1278470ab3825883898c5f51a0f",
+    clientId: "6Udd5BsqAd88ea6RUBWzc-",
+    clientSecret: "2dc47c3d93fd8dd7df3617b98cde7969",
   });
 
   // 지도 생성 옵션
