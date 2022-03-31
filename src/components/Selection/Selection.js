@@ -5,12 +5,13 @@ import styles from "./Selection.module.css";
 function Selection() {
   const mapDraw = useSelector((state) => state.mapDraw);
 
-  console.log(mapDraw.response);
-
+  // option에서 2개 이상의 value 를 지정하려면 json string 으로 전달해서 파싱해서 가져오면 됨.
   const floorInfos = mapDraw.response.floorInfo;
   const floorOpts = floorInfos.map((info, i) => {
+    const value = `{"id": "${info.id}","idx":${i}}`; // idx 값은 파싱하면 바로 number 로 나올 수 있게 ""로 감싸지 않았음.
+
     return (
-      <option value={info.id} key={i}>
+      <option value={value} key={i}>
         {info.name[0].text}
       </option>
     );
@@ -41,7 +42,9 @@ function Selection() {
         break;
 
       case "floor":
-        mapDraw.changeFloor({ floor: e.target.value });
+        // option에서 2개 이상의 value 를 지정하려면 json string 으로 전달해서 파싱해서 가져오면 됨.
+        const selectedFloor = JSON.parse(e.target.value);
+        mapDraw.changeFloor({ floor: selectedFloor.id }, selectedFloor.idx);
         break;
 
       case "theme":
