@@ -55,6 +55,7 @@ function Navigation(props) {
             isAnimate: true,
             duration: 1000,
           },
+          changeFloorDelay: 1500,
         });
         break;
 
