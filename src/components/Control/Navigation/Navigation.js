@@ -56,6 +56,7 @@ function Navigation(props) {
             duration: 1000,
           },
           changeFloorDelay: 1500,
+          // zoom: 150,
         });
         break;
 
