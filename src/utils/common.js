@@ -32,6 +32,7 @@ export function drawMap(mapCallback, otherOptions) {
   // 지도 생성 옵션
   let mapOptions = {
     authorization: authorization,
+    enableFloorMotion: true, // 층 변경 모션 적용 여부 옵션
   };
 
   if (otherOptions) {

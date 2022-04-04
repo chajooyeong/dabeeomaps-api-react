@@ -55,8 +55,9 @@ function Navigation(props) {
             isAnimate: true,
             duration: 1000,
           },
-          changeFloorDelay: 1500,
+          // changeFloorDelay: 1500, // enableFloorMotion 을 활성화하면 자동으로 딜레이를 1500ms 로 할당하도록 구조를 짰음.
           // zoom: 150,
+          enableFloorMotion: true, // 모의주행 중 층 변경 모션 적용 여부
         });
         break;
 
