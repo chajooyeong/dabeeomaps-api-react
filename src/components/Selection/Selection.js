@@ -8,14 +8,13 @@ function Selection() {
   // option에서 2개 이상의 value 를 지정하려면 json string 으로 전달해서 파싱해서 가져오면 됨.
   const floorInfos = mapDraw.response.floorInfo;
   const floorOpts = floorInfos.map((info, i) => {
-    const value = `{"id": "${info.id}","idx":${i}}`; // idx 값은 파싱하면 바로 number 로 나올 수 있게 ""로 감싸지 않았음.
-
     return (
-      <option value={value} key={i}>
+      <option value={info.id} key={i}>
         {info.name[0].text}
       </option>
     );
   });
+  const defaultFloorId = floorInfos.find((info) => info.defaultYn).id;
 
   const themeInfos = mapDraw.response.themeInfo;
   const themeOpts = themeInfos.map((info, i) => {
@@ -42,9 +41,7 @@ function Selection() {
         break;
 
       case "floor":
-        // option에서 2개 이상의 value 를 지정하려면 json string 으로 전달해서 파싱해서 가져오면 됨.
-        const selectedFloor = JSON.parse(e.target.value);
-        mapDraw.changeFloor({ floor: selectedFloor.id }, selectedFloor.idx);
+        mapDraw.changeFloor({ floor: e.target.value });
         break;
 
       case "theme":
@@ -86,7 +83,10 @@ function Selection() {
     >
       <div>
         <label htmlFor="floor">Choose floor</label>
-        <select name="floor">{floorOpts}</select>
+        {/* <option> 의 select 지정 시, 리액트에서는 상위 태그인 <select> 에서 defaultValue 값으로 해당 option 의 value 를 넣어줘야 함. */}
+        <select name="floor" defaultValue={defaultFloorId}>
+          {floorOpts}
+        </select>
       </div>
 
       <div>
